@@ -9,7 +9,7 @@ if(isset($_POST['register'])){
   $weight = mysqli_real_escape_string($connection, $_POST['weight']);
   $password = mysqli_real_escape_string($connection, $_POST['password']);
   $confirm_password = mysqli_real_escape_string($connection, $_POST['confirm_password']);
-  $gender = mysqli_real_escape_string($connection, $_POST['gender']);
+  $gender = mysqli_real_escape_string($connection, $_POST['gender']); // Add this line to define $gender
 
   if($password === $confirm_password){
     if(!empty($username) && !empty($email) && !empty($age) && !empty($height) && !empty($weight) && !empty($confirm_password)){
@@ -73,17 +73,13 @@ if(isset($_POST['register'])){
 
       </div>
 
-
-
-      <!-- <div class="profile">
-          <button type="button" id="profile-button" onclick="window.location.href='profile.php'">
-              <img class="profile-image"src="user.png">
+      <div class="profile">
+          <button id="profile-button">
+              <img class="profile-image" src="user.png">
           </button>
       </div>     
     </div>   
-  </div>   -->
-
-
+  </div>  
 
 
   <div class="register-box-container">
@@ -130,7 +126,7 @@ if(isset($_POST['register'])){
     <div class=footer-links>
       <a id="about-us" href="#">HOME</a>
       <a id="features" href="#">CALORIES</a>
-      <a id="sdgs" href="#">REGISTER</a>
+      <a id="sdgs" href="#">LOG IN</a>
       <a id="contact-us" href="#">CONTACT US</a>
       
     </div>
